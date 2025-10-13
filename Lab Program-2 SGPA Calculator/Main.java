@@ -41,7 +41,6 @@ class Student {
             System.out.print("Enter credits for subject " + (i + 1) + ": ");
             subject[i].credits = s.nextInt();
             
-            // Calculate grade based on marks
             subject[i].grade = (subject[i].subjectMarks / 10) + 1;
             
             if (subject[i].grade == 11) {
@@ -74,12 +73,28 @@ class Student {
 }
 
 public class Main {
-    public static void main(String[] args) {
-        Student student = new Student();
+      public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of students: ");
+        int n = scanner.nextInt();
+        scanner.nextLine();
 
-        student.getStudentDetails();
-        student.getMarks();
-        student.computeSGPA();
-        student.display();
+        Student[] students = new Student[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nEnter details for student " + (i + 1) + ":");
+            students[i] = new Student();
+            students[i].getStudentDetails();
+            students[i].getMarks();
+            students[i].computeSGPA();
+        }
+
+        System.out.println("\n--- Student Results ---");
+        for (int i = 0; i < n; i++) {
+            students[i].display();
+        }
+
+        scanner.close();
     }
 }
