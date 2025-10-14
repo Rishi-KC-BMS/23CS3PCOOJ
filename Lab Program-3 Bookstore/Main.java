@@ -4,22 +4,27 @@ class Books {
     String name;
     String author;
     int price;
-    int numPages;
+    int num_pages;
 
-    Books(String name, String author, int price, int numPages) 
+    Books(String name, String author, int price, int num_pages) 
     {
         this.name = name;
         this.author = author;
         this.price = price;
-        this.numPages = numPages;
+        this.num_pages
+ = num_pages
+;
     }
     public String toString() 
     {
         String name = "Book name: " + this.name + "\n";
         String author = "Author name: " + this.author + "\n";
         String price = "Price: " + this.price + "\n";
-        String numPages = "Number of pages: " + this.numPages + "\n";
-        return name + author + price + numPages;
+        String num_pages
+ = "Number of pages: " + this.num_pages
+ + "\n";
+        return name + author + price + num_pages
+;
     }
 }
 
@@ -29,7 +34,8 @@ public class Main
     {
         Scanner in = new Scanner(System.in);
         String name,author;
-        int price, numPages;
+        int price, num_pages
+;
 
         System.out.print("Enter number of books: ");
         int n = in.nextInt();
@@ -50,9 +56,11 @@ public class Main
             price = in.nextInt();
 
             System.out.print("Number of pages: ");
-            numPages = in.nextInt();
+            num_pages
+     = in.nextInt();
 
-            b[i] = new Books(name, author, price, numPages);
+            b[i] = new Books(name, author, price, num_pages
+    );
         }
 
         System.out.println("\n\nBook details:\n");
